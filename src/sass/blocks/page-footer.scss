@@ -1,0 +1,151 @@
+.page-footer {
+	background-color: #212121;
+}
+
+.page-footer__wrapper {
+	@include container-fluid();
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	padding-top: 60px;
+	padding-bottom: 65px;
+}
+
+.page-footer__contact a {
+	position: relative;
+
+	display: block;
+
+	margin: 0;
+	padding: 0;
+	padding-top: 72px;
+
+	font-family: "LatoRegular", Arial, sans-serif;
+	font-size: 14px;
+	text-decoration: none;
+	line-height: 1.4;
+	color: #fff;
+
+	cursor: pointer;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 60px;
+
+		width: 50px;
+		height: 50px;
+
+		background-color: #2E2D2D;
+		border: 1px solid #7D7D7D;
+		border-radius: 50%;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+
+		@include sprite($phone, 220px);
+		top: 7px;
+		left: 68px;
+	
+		background-repeat: no-repeat;
+	}
+
+	&:hover {
+		text-decoration: underline;
+	}	
+}
+
+.page-footer__socials {
+	padding-top: 47px;
+	padding-bottom: 27px;
+}
+
+.page-footer__container {
+	display: flex;
+	justify-content: center;
+}
+
+.page-footer__location strong {
+	position: relative;
+
+	display: block;
+
+	margin: 0;
+	padding: 0;
+	padding-top: 72px;
+
+	font-family: "LatoRegular", Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	line-height: 1.4;
+	color: #fff;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 65px;
+
+		width: 50px;
+		height: 50px;
+
+		background-color: #2E2D2D;
+		border: 1px solid #7D7D7D;
+		border-radius: 50%;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+	
+		@include sprite($map, 180px);
+		top: 9px;
+		left: 76px;
+		
+		background-repeat: no-repeat;
+	}
+}
+
+.page-footer__bottom {
+	width: 100%;
+	height: 40px;
+
+	margin: 0;
+	padding: 0;
+
+	background-color: #2E2D2D;
+}
+
+@media ($tablet-widths) {
+	.page-footer__wrapper {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.page-footer__contact {
+		margin-bottom: 10px;
+	}
+
+	.page-footer__socials {
+		padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
+	}
+}
+
+@media ($mobile-widths) {
+	.page-footer__wrapper {
+		padding-top: 45px;
+		padding-bottom: 50px;
+	}
+
+	// .page-footer__bottom {
+	// 	height: 25px;
+	// }
+} 

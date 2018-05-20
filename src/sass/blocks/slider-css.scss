@@ -1,0 +1,146 @@
+.slider-css {
+	position: relative;
+
+	width: 100%;
+	height: auto;
+}
+
+.slider-css input {
+	display: none;
+}
+
+.slider-css__container {
+	height: 100%;
+}
+
+.slider-css__overfow {
+	width: 100%;
+	height: 100%;
+
+	overflow: hidden;
+}
+
+.slider-css__list {
+	width: 300%;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+
+	transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+.slider-css__item {
+	float: left;
+
+	width: 33.333%;
+}
+
+.slider-css__item img {
+	width: 264px;
+	height: auto;
+
+	line-height: 0;
+}
+
+.slider-css__controls {
+	position: absolute;
+	bottom: 23px;
+	left: 0;
+
+	width: 100%;
+	height: 30px;
+}
+
+.slider-css__controls label {
+	cursor: pointer;
+}
+
+#slide1:checked ~ .slider-css__controls label:nth-child(3), 
+#slide2:checked ~ .slider-css__controls label:nth-child(1),
+#slide3:checked ~ .slider-css__controls label:nth-child(2) {
+	position: relative;
+
+	display: block;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 22px;
+
+		width: 30px;
+		height: 30px;
+
+		background-color: transparent;
+		border: 2px solid #fff;
+		border-radius: 50%;
+
+		box-sizing: border-box;
+
+		transition: all 0.2s ease-out;
+	}
+
+	&:hover::before {
+		background-color: #000;
+		border: 2px solid #000;
+	}
+
+	&::after {
+		content: "<";
+		position: absolute;
+		top: 6px;
+		left: 32px;
+
+		width: 10px;
+		height: 10px;
+
+		color: #fff;
+	}
+}
+
+#slide1:checked ~ .slider-css__controls label:nth-child(2), 
+#slide2:checked ~ .slider-css__controls label:nth-child(3),
+#slide3:checked ~ .slider-css__controls label:nth-child(1) {
+	position: relative;
+
+	display: block;
+
+	&::before {
+		content: "";
+		position: absolute;
+		right: 22px;
+
+		width: 30px;
+		height: 30px;
+
+		background-color: transparent;
+		border: 2px solid #fff;
+		border-radius: 50%;
+
+		box-sizing: border-box;
+
+		transition: all 0.2s ease-out;
+	}
+
+	&:hover::before {
+		background-color: #000;
+		border: 2px solid #000;
+	}
+
+	&::after {
+		content: ">";
+		position: absolute;
+		top: 6px;
+		right: 32px;
+
+		width: 10px;
+		height: 10px;
+
+		color: #fff;
+	}
+}
+
+#slide1:checked ~ .slider-css__container .slider-css__list { margin-left: 0; } 
+#slide2:checked ~ .slider-css__container .slider-css__list { margin-left: -100%; } 
+#slide3:checked ~ .slider-css__container .slider-css__list { margin-left: -200%; }

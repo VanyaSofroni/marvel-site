@@ -1,0 +1,30 @@
+@mixin clearfix() {
+	&::after {
+		content: "";
+
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin container-fluid() { // резиновый центровщик
+	max-width: 1140px;
+	margin: 0 auto;
+
+	@media ($desktop-widths) {
+		width: 90%;
+		max-width: 90%;
+	}
+
+	@media ($tablet-widths) {
+		width: auto;
+		max-width: 100%;
+	}
+}
+
+@mixin placeholder() {
+	&::-webkit-input-placeholder { @content; }
+	&::-moz-placeholder  				 { @content; }
+	&:-moz-placeholder  				 { @content; }
+	&:-ms-input-placeholder  		 { @content; }
+}

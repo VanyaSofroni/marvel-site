@@ -1,0 +1,169 @@
+.portfolio {
+	background-color: #FFE400;
+}
+
+.portfolio__wrapper {
+	@include container-fluid();
+
+	padding-top: 100px;
+}
+
+.portfolio__title {
+	margin: 0;
+	padding: 0;
+
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.portfolio__title b {
+	display: block;
+
+	margin: 0;
+	padding: 0;
+
+	font-family: "MontserratBlack", Arial, sans-serif;
+	font-size: 92px;
+	line-height: 1;
+	color: #E8D100;
+}
+
+.portfolio__title span {
+	display: block;
+
+	margin: 0;
+	margin-top: -49px;
+	padding: 0;
+
+	font-family: "MontserratBold", Arial, sans-serif;
+	font-size: 30px;
+	line-height: 1.4;
+	color: #000;
+}
+
+.portfolio__icon {
+	position: relative;
+	top: -13px;
+	right: -79%;
+
+	display: inline-block;
+	width: 33px;
+	height: 33px;
+
+	margin-right: 6px;
+
+	font-size: 0;
+	
+	background-color: #fff;
+	border: 1px solid #000;
+	border-radius: 50%;
+	box-sizing: border-box;
+
+	transform: translate3d(0, 80px, 0);
+	opacity: 0;
+	transition: opacity 0.50s, transform 0.40s;
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+
+	&:hover {
+		border: 1px solid #E6CE00;
+		background-color: #FFE400;
+	}
+
+	&:active {
+		background-color: rgba(255, 228, 0, 0.5);
+		border: 1px solid rgba(255, 228, 0, 0.5);
+	}
+}
+
+.portfolio__icon--link {
+	&::after {
+		@include sprite($link, 98px);
+		top: 8px;
+		left: 7px;
+	}
+}
+
+.portfolio__icon--search {
+	&::after {
+		@include sprite($search, 98px);
+		top: 7px;
+		left: 7px;
+	}
+}
+
+@media ("max-width: 1700px") {
+	.portfolio__icon {
+		right: -75%;
+	}
+}
+
+@media ("max-width: 1366px") {
+	.portfolio__icon {
+		right: -71%;
+	}
+}
+
+@media ("max-width: 1200px") {
+	.portfolio__icon {
+		right: -67%;
+	}
+}
+
+@media ("max-width: 1024px")  {
+	.portfolio__icon {
+		right: -60% !important;
+	}
+}
+
+@media ($tablet-widths) {
+	.portfolio__icon {
+		right: -61% !important;
+	}
+}
+
+@media ("max-width: 480px") {
+	.portfolio__wrapper {
+		padding-top: 65px;
+	}
+
+	.portfolio__title b {
+		font-size: 72px;
+	}
+
+	.portfolio__title span {
+		margin-top: -41px;
+		
+		font-size: 28px;
+	}
+
+	.portfolio__icon {
+		right: -79% !important;
+	}
+}
+
+@media ($mobile-widths) {
+	.portfolio__title b {
+		font-size: 62px;
+	}
+
+	.portfolio__title span {
+		margin-top: -38px;
+
+		font-size: 26px;
+	}
+
+	.portfolio__icon {
+		right: -67% !important;
+	}
+}
